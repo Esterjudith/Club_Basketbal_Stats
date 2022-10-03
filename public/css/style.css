@@ -1,0 +1,16 @@
+.stat {
+  color: #ffff;
+  background-color: #19f972;
+}
+
+.plyr {
+  color: #ffff;
+  background-color: #ed2121;
+}
+
+.cnt {
+  color: #000;
+  border: 1px solid black;
+  background-color: #fff;
+  text-align: center;
+}

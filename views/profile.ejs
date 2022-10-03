@@ -1,0 +1,94 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12">
+      <div>
+        <p><strong>User Name</strong>: <%= user.userName %></p>
+        <p><strong>Email</strong>: <%= user.email %></p>
+        <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+      </div>
+      <div class="mt-5">
+        <table id="table" class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Player #</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Rebound</th>
+              <th scope="col">Points</th>
+              <th scope="col">Steals</th>
+              <th scope="col">Assist</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <form id="chart" action="/profile/createPlayer/<%=player._id%>">  -->
+            <% for(let i = 0; i < data.length; i++) { %>
+
+            <tr>
+              <td>
+                <input class="w-25" type="number" id="number" /><%=
+                data[i].playerNumber %>
+              </td>
+              <td>
+                <input type="text" id="firstName" placeholder="First Name" /><%=
+                data[i].firstName %>
+              </td>
+              <td>
+                <input type="text" id="lastName" placeholder="Last Name" /><%=
+                data[i].firstLast %>
+              </td>
+            </tr>
+            <% } %>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <input type="button" onclick="insert_row()" value="Insert row" />
+        <button onclick="updateData()">Done</button>
+
+        <script>
+          function updateData() {
+            let array = [];
+            let table = document.getElementById("table");
+            let rowlength = table.rows.length;
+            for (i = 0; i < rowlength; i++) {
+              let cells = table.rows.item(i).cells;
+              let currentPlayer = {
+                playerNumber: cells.item(0).innerHTML,
+                firstName: cells.item(1).innerHTML,
+                lastName: cells.item(2).innerHTML,
+              };
+              array.push(currentPlayer);
+            }
+            async function addtoDb() {
+              try {
+                const response = await fetch("/profile", {
+                  method: "POST",
+                  body: { data: array, userId: "<%= user.userName %>" },
+                });
+                const data = await response.json();
+                console.log(data);
+                location.reload();
+              } catch (err) {
+                console.log(err);
+              }
+            }
+          }
+        </script>
+
+        <%- include('partials/footer') -%>
+      </div>
+    </div>
+  </div>
+</div>
