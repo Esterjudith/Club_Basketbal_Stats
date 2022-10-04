@@ -1,4 +1,57 @@
 <%- include('partials/header') -%>
-<div class="container">
-  <h1 class="mb-4">Players Info</h1>
+
+<div class="card">
+  <div class="card-header">
+    <h4 class="font-weight-bold">Add New Player</h4>
+  </div>
+  <div class="card-body">
+    <form action="/player/createPlayer" id="add_player_form" method="POST">
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label class="col-form-label" for="playernumber"
+              >Player's Number</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              name="playernumber"
+              placeholder="enter team number"
+              id="playernumber"
+            />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label class="col-form-label" for="firstname">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="firstname"
+              placeholder="enter first name"
+              id="firstname"
+            />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label class="col-form-label" for="lastname">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="lastname"
+              placeholder="enter last name"
+              id="lastname"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href="/profile" class="btn btn-light">Cancel</a>
+      </div>
+    </form>
+  </div>
 </div>
+
+<%- include('partials/footer') -%>

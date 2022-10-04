@@ -21,43 +21,71 @@
             </tr>
           </thead>
           <tbody>
-            <!-- <form id="chart" action="/profile/createPlayer/<%=player._id%>">  -->
-            <% for(let i = 0; i < data.length; i++) { %>
+            <% if(players.length > 0){ %> <% for(let player of player) { %>
 
             <tr>
+              <th scope="row"><%= player.playerNumber %></th>
+              <td><% player.firstName %></td>
+              <td><% player.lastName %></td>
               <td>
-                <input class="w-25" type="number" id="number" /><%=
-                data[i].playerNumber %>
+                <form
+                  class="col-1"
+                  action="/stat/addPoint/<%= player.id %>?_method=PUT"
+                  method="POST"
+                >
+                  <button type="button" class="btn btn-secondary" type="submit">
+                    -
+                  </button>
+                </form>
+                <%= stat.addPoint %><button
+                  type="button"
+                  class="btn btn-secondary"
+                >
+                  +
+                </button>
               </td>
               <td>
-                <input type="text" id="firstName" placeholder="First Name" /><%=
-                data[i].firstName %>
+                <button type="button" class="btn btn-secondary">-</button
+                >rebounds<button type="button" class="btn btn-secondary">
+                  +
+                </button>
               </td>
               <td>
-                <input type="text" id="lastName" placeholder="Last Name" /><%=
-                data[i].firstLast %>
+                <button type="button" class="btn btn-secondary">-</button
+                >assists<button type="button" class="btn btn-secondary">
+                  +
+                </button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-secondary">-</button
+                >steals<button type="button" class="btn btn-secondary">
+                  +
+                </button>
               </td>
             </tr>
             <% } %>
             <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
+              <a
+                href="/updatePlayer/<%= player._id %>"
+                class="btn btn-sm btn-warning"
+                ><i class="fa fa-edit"></i
+              ></a>
+              <a
+                href="/deletePlayer/<%= player._id %>"
+                class="btn btn-sm btn-danger"
+                ><i class="fa fa-trash"></i
+              ></a>
             </tr>
+
+            <% } %> <% } else { %>
             <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
+              <td>No data found</td>
             </tr>
+            <% } %>
           </tbody>
         </table>
-        <br />
-        <input type="button" onclick="insert_row()" value="Insert row" />
-        <button onclick="updateData()">Done</button>
 
-        <script>
+        <!-- <script>
           function updateData() {
             let array = [];
             let table = document.getElementById("table");
@@ -85,7 +113,7 @@
               }
             }
           }
-        </script>
+        </script> -->
 
         <%- include('partials/footer') -%>
       </div>

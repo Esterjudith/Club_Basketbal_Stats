@@ -10,25 +10,6 @@ module.exports = {
         } catch (err) {
             console.log(err)
         }
-    },
-    createPlayer: async (req, res) => {
-        try {
-            let array = req.body.data
-            array.forEach(async (el) => {
-                await Player.create({
-                    playerNumber: el.playerNumber,
-                    firstName: el.firstName,
-                    lastName: el.lastName,
-                    user: req.body.user.id,
-                });
-                console.log("Player has been added!");
-
-            })
-
-        } catch (err) {
-            console.log(err);
-        }
-    },
-
+    }
 
 }
