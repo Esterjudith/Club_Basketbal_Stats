@@ -9,7 +9,6 @@ const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
-const profileRoutes = require("./routes/profile");
 const playerRoutes = require("./routes/player");
 const statRoutes = require("./routes/stat")
 
@@ -57,7 +56,6 @@ app.use(flash());
 
 //Setup Routes For which The Server Is Listening
 app.use("/", mainRoutes);
-app.use("/profile", profileRoutes);
 app.use("/player", playerRoutes)
 app.use("/stat", statRoutes)
 

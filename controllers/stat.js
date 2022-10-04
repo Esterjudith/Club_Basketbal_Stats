@@ -1,6 +1,6 @@
 const Stat = require("../models/Stat")
 
-module.export = {
+module.exports = {
 
     addPoint: async (req, res) => {
         try {
