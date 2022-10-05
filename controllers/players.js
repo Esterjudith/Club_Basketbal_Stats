@@ -1,7 +1,17 @@
 const Player = require("../models/Player")
 
 module.exports = {
-    createPlayer: async (req, res) => {
+    getPlayer: async (req, res, next) => {
+        try {
+            const list = await Player.find().exe();
+            res.render("players", {
+                players: list
+            }); //renders the player's page with the objects in the object above.
+        } catch (err) {
+            console.log(err);
+        }
+    },
+    addPlayer: async (req, res) => {
         try {
             await Player.create({
                 playerNumber: req.body.playerNumber,
@@ -10,7 +20,7 @@ module.exports = {
                 user: req.user.id,
             })
             console.log("Player has been added!");
-            res.redirect("/profile");
+            res.render("players.ejs");
         } catch (err) {
             console.log(err)
         }

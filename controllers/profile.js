@@ -5,8 +5,8 @@ module.exports = {
 
     getProfile: async (req, res) => {
         try {
-            const stats = await Stat.find({ user: req.user.id });
-            res.render("profile.ejs", { stats: stats, user: req.user })
+            const player = await Player.find({ user: req.user.id });
+            res.render("profile.ejs", { players: player, user: req.user })
         } catch (err) {
             console.log(err)
         }

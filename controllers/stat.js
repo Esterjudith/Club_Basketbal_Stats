@@ -1,10 +1,10 @@
-const Stat = require("../models/Stat")
+const Player = require("../models/Player")
 
 module.exports = {
 
     addPoint: async (req, res) => {
         try {
-            await Stat.findOneAndUpdate({
+            await Player.findOneAndUpdate({
                 $inc: { onePoint: 1 },
             })
             console.log("points +1")
@@ -15,7 +15,7 @@ module.exports = {
     },
     addRebound: async (req, res) => {
         try {
-            await Stat.findOneAndUpdate({
+            await Player.findOneAndUpdate({
                 $inc: { rebound: 1 },
             })
             console.log("rebound +1")
@@ -26,7 +26,7 @@ module.exports = {
     },
     addAssist: async (req, res) => {
         try {
-            await Stat.findOneAndUpdate({
+            await Player.findOneAndUpdate({
                 $inc: { assist: 1 },
             })
             console.log("assist +1")
@@ -37,7 +37,7 @@ module.exports = {
     },
     addSteal: async (req, res) => {
         try {
-            await Stat.findOneAndUpdate({
+            await Player.findOneAndUpdate({
                 $inc: { steal: 1 },
             })
             console.log("steal +1")

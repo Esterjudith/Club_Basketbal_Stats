@@ -5,8 +5,6 @@ const PlayerSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-
-
     firstName: {
         type: String,
         required: true,
@@ -15,7 +13,39 @@ const PlayerSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    team: {
+        type: String,
+        require: true,
+    },
 
+    rebound: {
+        type: Number,
+        require: true,
+    },
+    onePoint: {
+        type: Number,
+        require: true,
+    },
+    twoPoints: {
+        type: Number,
+        required: true,
+    },
+    threePoints: {
+        type: Number,
+        required: true,
+    },
+    steals: {
+        type: Number,
+        required: true,
+    },
+    assist: {
+        type: Number,
+        required: true,
+    },
+    blocks: {
+        type: Number,
+        required: true,
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

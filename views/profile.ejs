@@ -7,6 +7,20 @@
         <p><strong>Email</strong>: <%= user.email %></p>
         <a href="/logout" class="col-3 btn btn-primary">Logout</a>
       </div>
+
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                    <div class="col-8">
+                        <h4 class="font-weight-bold">All Players</h4>
+                    </div>
+                  <div class="col-4">
+                    <a href="/players" class="btn btn-success float-rigth"><i class="fa fa-lus mr-1"></i>Add Player</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
       <div class="mt-5">
         <table id="table" class="table table-striped table-dark">
           <thead>
@@ -21,8 +35,7 @@
             </tr>
           </thead>
           <tbody>
-            <% if(players.length > 0){ %> <% for(let player of player) { %>
-
+            <% if(players.length > 0){ %> <% for(let player of players) { %>
             <tr>
               <th scope="row"><%= player.playerNumber %></th>
               <td><% player.firstName %></td>
@@ -30,14 +43,14 @@
               <td>
                 <form
                   class="col-1"
-                  action="/stat/addPoint/<%= player.id %>?_method=PUT"
+                  action="/players/addPoint/<%= player.id %>?_method=PUT"
                   method="POST"
                 >
                   <button type="button" class="btn btn-secondary" type="submit">
                     -
                   </button>
                 </form>
-                <%= stat.addPoint %><button
+                <%= player.addPoint %><button
                   type="button"
                   class="btn btn-secondary"
                 >
@@ -63,7 +76,7 @@
                 </button>
               </td>
             </tr>
-            <!-- <% } %> -->
+
             <tr>
               <a
                 href="/updatePlayer/<%= player._id %>"
@@ -76,7 +89,6 @@
                 ><i class="fa fa-trash"></i
               ></a>
             </tr>
-
             <% } %> <% } else { %>
             <tr>
               <td>No data found</td>
@@ -84,38 +96,6 @@
             <% } %>
           </tbody>
         </table>
-
-        <!-- <script>
-          function updateData() {
-            let array = [];
-            let table = document.getElementById("table");
-            let rowlength = table.rows.length;
-            for (i = 0; i < rowlength; i++) {
-              let cells = table.rows.item(i).cells;
-              let currentPlayer = {
-                playerNumber: cells.item(0).innerHTML,
-                firstName: cells.item(1).innerHTML,
-                lastName: cells.item(2).innerHTML,
-              };
-              array.push(currentPlayer);
-            }
-            async function addtoDb() {
-              try {
-                const response = await fetch("/profile", {
-                  method: "POST",
-                  body: { data: array, userId: "<%= user.userName %>" },
-                });
-                const data = await response.json();
-                console.log(data);
-                location.reload();
-              } catch (err) {
-                console.log(err);
-              }
-            }
-          }
-        </script> -->
-
-        <%- include('partials/footer') -%>
       </div>
     </div>
   </div>
