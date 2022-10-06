@@ -5,6 +5,14 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 const router = express.Router();
 router.get("/", ensureAuth, playersController.getPlayer)
 
-router.post('/createPlayer', playersController.addPlayer)
+router.post('/addPlayer', playersController.addPlayer)
+
+router.put("/addPoint", playersController.addPoint);
+
+router.put("/addRebound", playersController.addRebound);
+
+router.put("/addAssist", playersController.addAssist);
+
+router.put("/addSteal", playersController.addSteal);
 
 module.exports = router;

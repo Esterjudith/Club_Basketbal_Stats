@@ -15,6 +15,10 @@ const PlayerSchema = new mongoose.Schema({
     },
     team: {
         type: String,
+        require: false,
+    },
+    Point: {
+        type: Number,
         require: true,
     },
 
@@ -22,18 +26,7 @@ const PlayerSchema = new mongoose.Schema({
         type: Number,
         require: true,
     },
-    onePoint: {
-        type: Number,
-        require: true,
-    },
-    twoPoints: {
-        type: Number,
-        required: true,
-    },
-    threePoints: {
-        type: Number,
-        required: true,
-    },
+
     steals: {
         type: Number,
         required: true,
