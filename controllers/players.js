@@ -15,9 +15,11 @@ module.exports = {
                 playerNumber: req.body.playerNumber,
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
-                point: 0,
-                rebound: 0,
-                assist: 0,
+                team: req.body.team,
+                points: 0,
+                rebounds: 0,
+                steals: 0,
+                assists: 0,
                 blocks: 0,
                 user: req.user.id,
             })
@@ -30,7 +32,7 @@ module.exports = {
     addPoint: async (req, res) => {
         try {
             await Player.findOneAndUpdate({
-                $inc: { onePoint: 1 },
+                $inc: { points: 1 },
             })
             console.log("points +1")
             res.redirect('/profile')
@@ -41,7 +43,7 @@ module.exports = {
     addRebound: async (req, res) => {
         try {
             await Player.findOneAndUpdate({
-                $inc: { rebound: 1 },
+                $inc: { rebounds: 1 },
             })
             console.log("rebound +1")
             res.redirect('/profile')
@@ -52,7 +54,7 @@ module.exports = {
     addAssist: async (req, res) => {
         try {
             await Player.findOneAndUpdate({
-                $inc: { assist: 1 },
+                $inc: { assists: 1 },
             })
             console.log("assist +1")
             res.redirect('/profile')
@@ -63,7 +65,7 @@ module.exports = {
     addSteal: async (req, res) => {
         try {
             await Player.findOneAndUpdate({
-                $inc: { steal: 1 },
+                $inc: { steals: 1 },
             })
             console.log("steal +1")
             res.redirect('/profile')

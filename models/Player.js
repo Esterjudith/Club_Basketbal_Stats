@@ -17,12 +17,12 @@ const PlayerSchema = new mongoose.Schema({
         type: String,
         require: false,
     },
-    Point: {
+    points: {
         type: Number,
         require: true,
     },
 
-    rebound: {
+    rebounds: {
         type: Number,
         require: true,
     },
@@ -31,7 +31,7 @@ const PlayerSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    assist: {
+    assists: {
         type: Number,
         required: true,
     },

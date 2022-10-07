@@ -28,18 +28,19 @@
               <th scope="col">Player #</th>
               <th scope="col">First Name</th>
               <th scope="col">Last Name</th>
-              <th scope="col">Rebound</th>
               <th scope="col">Points</th>
+              <th scope="col">Rebounds</th>
               <th scope="col">Steals</th>
               <th scope="col">Assist</th>
+              <th scope="col">Blocks</th>
             </tr>
           </thead>
           <tbody>
             <% if(players.length > 0){ %> <% for(let player of players) { %>
             <tr>
               <th scope="row"><%= player.playerNumber %></th>
-              <td><% player.firstName %></td>
-              <td><% player.lastName %></td>
+              <td><%= player.firstName %></td>
+              <td><%= player.lastName %></td>
               <td>
                 <form
                   class="col-1"
@@ -47,19 +48,19 @@
                   method="POST"
                 >
                   <button type="button" class="btn btn-secondary" type="submit">
-                    -
+                    +
                   </button>
                 </form>
                 <%= player.point %><button
                   type="button"
                   class="btn btn-secondary"
                 >
-                  +
+                  -
                 </button>
               </td>
               <td>
                 <button type="button" class="btn btn-secondary">-</button
-                >rebounds<button type="button" class="btn btn-secondary">
+                ><%= players.rebounds %><button type="button" class="btn btn-secondary">
                   +
                 </button>
               </td>
