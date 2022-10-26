@@ -7,12 +7,26 @@ router.get("/", ensureAuth, playersController.getPlayer)
 
 router.post('/addPlayer', playersController.addPlayer)
 
-router.put("/addPoint", playersController.addPoint);
+router.put("/addPoint/:id", playersController.addPoint);
 
-router.put("/addRebound", playersController.addRebound);
+router.put("/addRebound/:id", playersController.addRebound);
 
-router.put("/addAssist", playersController.addAssist);
+router.put("/addSteal/:id", playersController.addSteal);
 
-router.put("/addSteal", playersController.addSteal);
+router.put("/addAssist/:id", playersController.addAssist);
+
+router.put("/addBlock/:id", playersController.addBlock);
+
+router.put("/deletePoint/:id", playersController.deletePoint);
+
+router.put("/deleteRebound/:id", playersController.deleteRebound);
+
+router.put("/deleteSteal/:id", playersController.deleteSteal);
+
+router.put("/deleteAssist/:id", playersController.deleteAssist);
+
+router.put("/deleteBlock/:id", playersController.deleteBlock);
+
+router.delete("/deletePlayer/:id", playersController.deletePlayer);
 
 module.exports = router;

@@ -33,6 +33,8 @@
               <th scope="col">Steals</th>
               <th scope="col">Assist</th>
               <th scope="col">Blocks</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -43,53 +45,100 @@
               <td><%= player.lastName %></td>
               <td>
                 <form
-                  class="col-1"
+                  class="pointer"
+                  action="/players/deletePoint/<%= player.id %>?_method=PUT"
+                  method="POST">                
+                  <button  class="btn btn-secondary" type="submit">-</button>
+                </form>
+                <%= player.points %><form
+                  class="pointer"
                   action="/players/addPoint/<%= player.id %>?_method=PUT"
                   method="POST"
-                >
-                  <button type="button" class="btn btn-secondary" type="submit">
-                    +
-                  </button>
-                </form>
-                <%= player.point %><button
-                  type="button"
+                ><button
                   class="btn btn-secondary"
-                >
-                  -
-                </button>
+                  type="submit"
+                >+</button>
+                </form>
               </td>
               <td>
-                <button type="button" class="btn btn-secondary">-</button
-                ><%= players.rebounds %><button type="button" class="btn btn-secondary">
+                <form
+                  class="pointer"
+                  action="/players/deleteRebound/<%= player.id %>?_method=PUT"
+                  method="POST">                   
+                <button class="btn btn-secondary" type="submit">-</button>
+                </form>
+                <%= player.rebounds %><form
+                  class="pointer"
+                  action="/players/addRebound/<%= player.id %>?_method=PUT"
+                  method="POST"><button  class="btn btn-secondary" type="submit">
                   +
                 </button>
+                </form>
               </td>
               <td>
-                <button type="button" class="btn btn-secondary">-</button
-                >assists<button type="button" class="btn btn-secondary">
+                <form
+                  class="pointer"
+                  action="/players/deleteSteal/<%= player.id %>?_method=PUT"
+                  method="POST">                   
+                <button  class="btn btn-secondary" type="submit">-</button>
+               </form>
+                <%= player.steals %><form
+                  class="pointer"
+                  action="/players/addSteal/<%= player.id %>?_method=PUT"
+                  method="POST"><button  class="btn btn-secondary" type="submit">
                   +
                 </button>
+                </form>
               </td>
               <td>
-                <button type="button" class="btn btn-secondary">-</button
-                >steals<button type="button" class="btn btn-secondary">
+                 <form
+                  class="pointer"
+                  action="/players/deleteAssist/<%= player.id %>?_method=PUT"
+                  method="POST">                   
+                <button  class="btn btn-secondary" type="submit">-</button>
+               </form>
+                <%= player.assists %><form
+                  class="pointer"
+                  action="/players/addAssist/<%= player.id %>?_method=PUT"
+                  method="POST"><button  class="btn btn-secondary" type="submit">
                   +
                 </button>
+                </form>
               </td>
-            </tr>
-
-            <tr>
-              <a
+               <td>
+                 <form
+                  class="pointer"
+                  action="/players/deleteBlock/<%= player.id %>?_method=PUT"
+                  method="POST">                   
+                <button  class="btn btn-secondary" type="submit">-</button>
+               </form>
+                <%= player.blocks %><form
+                  class="pointer"
+                  action="/players/addBlock/<%= player.id %>?_method=PUT"
+                  method="POST"><button  class="btn btn-secondary" type="submit">
+                  +
+                </button>
+                </form>
+              </td>
+              <td>
+                 <a
                 href="/updatePlayer/<%= player._id %>"
                 class="btn btn-sm btn-warning"
                 ><i class="fa fa-edit"></i
               ></a>
-              <a
-                href="/deletePlayer/<%= player._id %>"
+              </td>
+              <td>
+                <a
+                href="/players/deletePlayer/<%= player.id %>"
                 class="btn btn-sm btn-danger"
                 ><i class="fa fa-trash"></i
               ></a>
+              </td>
+
+              
             </tr>
+
+           
             <% } %> <% } else { %>
             <tr>
               <td>No data found</td>

@@ -14,3 +14,8 @@
   background-color: #fff;
   text-align: center;
 }
+
+.pointer {
+  display: inline;
+  padding: none;
+}

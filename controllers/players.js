@@ -24,16 +24,36 @@ module.exports = {
                 user: req.user.id,
             })
             console.log("Player has been added!");
-            res.render("players.ejs");
+            res.render("profile.ejs");
         } catch (err) {
             console.log(err)
         }
     },
+    deletePlayer: async (req, res) => {
+        try {
+            // Find post by id
+
+            // Delete post from db
+            await Player.remove({ _id: req.params.id });
+            console.log("Deleted Player");
+            res.redirect("/profile");
+        } catch (err) {
+            res.redirect("/profile");
+        }
+    },
     addPoint: async (req, res) => {
         try {
+
             await Player.findOneAndUpdate({
-                $inc: { points: 1 },
-            })
+                _id: req.params.id
+            },
+                {
+                    $inc: { points: 1 },
+                },
+                {
+                    new: true,
+                    runValidators: true
+                })
             console.log("points +1")
             res.redirect('/profile')
         } catch (err) {
@@ -43,8 +63,16 @@ module.exports = {
     addRebound: async (req, res) => {
         try {
             await Player.findOneAndUpdate({
-                $inc: { rebounds: 1 },
-            })
+                _id: req.params.id
+            },
+                {
+                    $inc: { rebounds: 1 },
+                },
+                {
+                    new: true,
+                    runValidators: true
+                })
+
             console.log("rebound +1")
             res.redirect('/profile')
         } catch (err) {
@@ -54,8 +82,16 @@ module.exports = {
     addAssist: async (req, res) => {
         try {
             await Player.findOneAndUpdate({
-                $inc: { assists: 1 },
-            })
+                _id: req.params.id
+            },
+                {
+                    $inc: { assists: 1 },
+                },
+                {
+                    new: true,
+                    runValidators: true
+                })
+
             console.log("assist +1")
             res.redirect('/profile')
         } catch (err) {
@@ -65,9 +101,131 @@ module.exports = {
     addSteal: async (req, res) => {
         try {
             await Player.findOneAndUpdate({
-                $inc: { steals: 1 },
-            })
+                _id: req.params.id
+            },
+                {
+                    $inc: { steals: 1 },
+                },
+                {
+                    new: true,
+                    runValidators: true
+                })
+
             console.log("steal +1")
+            res.redirect('/profile')
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    addBlock: async (req, res) => {
+        try {
+            await Player.findOneAndUpdate({
+                _id: req.params.id
+            },
+                {
+                    $inc: { blocks: 1 },
+                },
+                {
+                    new: true,
+                    runValidators: true
+                })
+
+            console.log("block +1")
+            res.redirect('/profile')
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    deletePoint: async (req, res) => {
+        try {
+
+            await Player.findOneAndUpdate({
+                _id: req.params.id
+            },
+                {
+                    $inc: { points: -1 },
+                },
+                {
+                    new: true,
+                    runValidators: true
+                })
+            console.log("points -1")
+            res.redirect('/profile')
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    deleteRebound: async (req, res) => {
+        try {
+            await Player.findOneAndUpdate({
+                _id: req.params.id
+            },
+                {
+                    $inc: { rebounds: -1 },
+                },
+                {
+                    new: true,
+                    runValidators: true
+                })
+
+            console.log("rebound -1")
+            res.redirect('/profile')
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    deleteSteal: async (req, res) => {
+        try {
+            await Player.findOneAndUpdate({
+                _id: req.params.id
+            },
+                {
+                    $inc: { steals: -1 },
+                },
+                {
+                    new: true,
+                    runValidators: true
+                })
+
+            console.log("steal -1")
+            res.redirect('/profile')
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    deleteAssist: async (req, res) => {
+        try {
+            await Player.findOneAndUpdate({
+                _id: req.params.id
+            },
+                {
+                    $inc: { assists: -1 },
+                },
+                {
+                    new: true,
+                    runValidators: true
+                })
+
+            console.log("assist -1")
+            res.redirect('/profile')
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    deleteBlock: async (req, res) => {
+        try {
+            await Player.findOneAndUpdate({
+                _id: req.params.id
+            },
+                {
+                    $inc: { blocks: -1 },
+                },
+                {
+                    new: true,
+                    runValidators: true
+                })
+
+            console.log("block -1")
             res.redirect('/profile')
         } catch (err) {
             console.log(err)
