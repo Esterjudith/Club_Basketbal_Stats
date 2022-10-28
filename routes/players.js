@@ -1,4 +1,5 @@
-const express = require('express')
+const express = require('express');
+const { updatePlayer } = require('../controllers/players');
 const playersController = require("../controllers/players")
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
@@ -28,5 +29,7 @@ router.put("/deleteAssist/:id", playersController.deleteAssist);
 router.put("/deleteBlock/:id", playersController.deleteBlock);
 
 router.delete("/deletePlayer/:id", playersController.deletePlayer);
+
+router.get('/updatePlayer/:id', playersController.updatePlayer)
 
 module.exports = router;

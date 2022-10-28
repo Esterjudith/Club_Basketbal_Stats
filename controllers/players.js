@@ -29,12 +29,25 @@ module.exports = {
             console.log(err)
         }
     },
+    updatePlayer: async (req, res, next) => {
+        try {
+            const id = req.params.id
+            const onePlayer = await Player.findOneAndUpdate({ id })
+            console.log("Player has been updated")
+            res.render('updatePlayer', {
+                player: onePlayer
+            })
+
+        } catch (error) {
+            res.status(400).send(error.message)
+        }
+    },
     deletePlayer: async (req, res) => {
         try {
             // Find post by id
 
             // Delete post from db
-            await Player.remove({ _id: req.params.id });
+            const player = await Player.remove({ _id: req.params.id });
             console.log("Deleted Player");
             res.redirect("/profile");
         } catch (err) {

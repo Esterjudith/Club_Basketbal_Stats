@@ -122,17 +122,22 @@
               </td>
               <td>
                  <a
-                href="/updatePlayer/<%= player._id %>"
+                href="/updatePlayer/<%= player.id %>"
                 class="btn btn-sm btn-warning"
                 ><i class="fa fa-edit"></i
               ></a>
               </td>
               <td>
-                <a
-                href="/players/deletePlayer/<%= player.id %>"
+                <form
+                    action="/players/deletePlayer/<%= player.id %>?_method=DELETE"
+                    method="POST"
+                    class="col-3"
+                >
+                <button
                 class="btn btn-sm btn-danger"
-                ><i class="fa fa-trash"></i
-              ></a>
+                ><i class="fa fa-trash" type="submit"></i                
+              ></button>
+                </form>
               </td>
 
               
