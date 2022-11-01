@@ -29,7 +29,7 @@ router.put("/deleteBlock/:id", playersController.deleteBlock);
 
 router.delete("/deletePlayer/:id", playersController.deletePlayer);
 
-router.get("/updatePlayer/:id", playersController.updatePlayer)
+router.get('/updatePlayer/:id', playersController.updatePlayer)
 
 
 module.exports = router;

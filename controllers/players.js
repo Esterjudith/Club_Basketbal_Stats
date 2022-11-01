@@ -24,14 +24,14 @@ module.exports = {
                 user: req.user.id,
             })
             console.log("Player has been added!");
-            res.render("profile");
+            res.redirect("/profile");
         } catch (err) {
             console.log(err)
         }
     },
     updatePlayer: async (req, res, next) => {
         try {
-            const id = req.params.id;
+            const id = req.params.id
             const onePlayer = await Player.findById(id).exec()
             console.log("Player has been updated")
             res.render('updatePlayer', {
