@@ -31,4 +31,5 @@ router.delete("/deletePlayer/:id", playersController.deletePlayer);
 
 router.get("/updatePlayer/:id", playersController.updatePlayer)
 
+
 module.exports = router;

@@ -24,7 +24,7 @@ module.exports = {
                 user: req.user.id,
             })
             console.log("Player has been added!");
-            res.render("profile.ejs");
+            res.render("profile");
         } catch (err) {
             console.log(err)
         }
