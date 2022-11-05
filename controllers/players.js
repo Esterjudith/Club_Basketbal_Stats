@@ -32,12 +32,11 @@ module.exports = {
     updatePlayer: async (req, res, next) => {
         try {
             const id = req.params.id
-            const onePlayer = await Player.findById(id).exec()
+            const player = await Player.findById(id).exec()
             console.log("Player has been updated")
             res.render('updatePlayer', {
-                player: onePlayer
-            })
-
+                player: player
+            });
         } catch (error) {
             res.status(400).send(error.message)
         }

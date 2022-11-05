@@ -1,21 +1,12 @@
-.stat {
-  color: #ffff;
-  background-color: #19f972;
-}
-
-.plyr {
-  color: #ffff;
-  background-color: #ed2121;
-}
-
-.cnt {
-  color: #000;
-  border: 1px solid black;
-  background-color: #fff;
-  text-align: center;
-}
-
 .pointer {
   display: inline;
   padding: none;
+}
+
+.btn-secondary {
+  margin: 0 2px 0 7px;
+}
+
+.stats {
+  margin-left: 20px;
 }
