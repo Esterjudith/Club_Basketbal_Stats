@@ -1,7 +1,7 @@
 {
-  "name": "binary-upload-boom",
+  "name": "club-basketball-stats",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "Keep tracks of stats",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"  
