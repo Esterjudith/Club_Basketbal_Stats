@@ -72,3 +72,17 @@ btn:hover {
 .stats {
   margin-left: 20px;
 }
+/* Login page */
+.form-label,
+p {
+  color: rgb(188, 167, 167);
+}
+
+/* Profile page */
+.card {
+  background-color: #181212;
+}
+
+.font-weight-bold {
+  color: rgb(188, 167, 167);
+}
