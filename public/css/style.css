@@ -83,6 +83,12 @@ p {
   background-color: #181212;
 }
 
+.card-player {
+  width: 60vw;
+  padding: 2rem;
+  margin: auto;
+}
+
 .font-weight-bold {
   color: rgb(188, 167, 167);
 }
