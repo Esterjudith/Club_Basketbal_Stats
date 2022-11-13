@@ -1,6 +1,6 @@
 # Club basketball stats tracker
 
-In this app is for club basketball teams to keep track of each of their players stats and store it in a database.
+In this app is for club basketball :basketball: teams to keep track of each of their players stats and store it in a database.
 
 
 
@@ -21,4 +21,4 @@ Instead of updatings each stat with a put request I have nested each +/- button 
 
 #Optimizations
 
-This app was a ton of fun to create and plan on adding more things to optimize speed and performance.  For performance, adding an update button will be my next step and to optimize rending speed I'll be making the stats update buttons React components instead of updating as forms so only the buttons themselves will update on each user request instead of the whole page loading. 
+This app was a ton of fun to create and plan on adding more things to optimize speed and performance :smirk:.  For performance, adding an update button will be my next step and to optimize rending speed I'll be making the stats update buttons React components instead of updating as forms so only the buttons themselves will update on each user request instead of the whole page loading. 
