@@ -1,5 +1,13 @@
 const express = require("express");
 const app = express();
+
+//new stuff
+const { MongoClient } = require('mongodb');
+const uri = process.env.DB_STRING;
+const client = new MongoClient(uri);
+//
+
+
 const mongoose = require("mongoose");
 const passport = require("passport");
 const session = require("express-session");
@@ -40,7 +48,7 @@ app.use(methodOverride("_method"));
 // Setup Sessions - stored in MongoDB
 app.use(
     session({
-        secret: "keyboard cat",
+        secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
         store: new MongoStore({ mongooseConnection: mongoose.connection }),
@@ -61,6 +69,17 @@ app.use("/players", playerRoutes)
 
 
 //Server Running
-app.listen(process.env.PORT, () => {
-    console.log("Server is running, you better catch it!");
-});
+// app.listen(process.env.PORT, () => {
+//     console.log("Server is running, you better catch it!");
+// });
+
+//new stuff
+const dbs = connectDB().then(() => {
+
+    client.connect(async err => {
+        if (err) { console.error(err); return false; }
+        app.listen(8000, () => {
+            console.log("listening for requests")
+        })
+    })
+})
