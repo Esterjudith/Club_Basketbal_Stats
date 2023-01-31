@@ -1,0 +1,86 @@
+<%- include('partials/header') -%>
+
+        <div class="card card-player">
+          <div class="card-header">
+             <h4 class="font-weight-bold">edit Player</h4>
+          </div>
+          <div class="card-body">
+           <% player.forEach(player=> { %>
+             <% if(player._id == playerId) { %>
+            <form action="/edit/updatePlayer/<%= player._id%>" id="edit_player_form" method="POST">
+             <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="col-form-label" for="playerNumber"
+                    ></label
+                    >
+                    <input
+                    type="number"
+                    class="form-control"
+                    name="playerNumber"
+                    placeholder="enter team number"
+                    id="playerNumber"
+                    value="<%=player.playerNumber %>"
+                    />
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                <label class="col-form-label" for="team"></label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="team"
+                    placeholder="enter team"
+                    id="team"
+                    value="<%=player.team %>"
+                />
+                </div>
+            </div>
+            
+                <div class="col-6">
+                <div class="form-group">
+                    <label class="col-form-label" for="firstName"></label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="firstName"
+                    placeholder="enter first name"
+                    id="firstName"
+                    value="<%=player.firstName %>"
+                    />
+                </div>
+                </div>
+                <div class="col-6">
+                <div class="form-group">
+                    <label class="col-form-label" for="lastName"></label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="lastName"
+                    placeholder="enter last name"
+                    id="lastName"
+                    value="<%=player.lastName %>"
+                    />
+                </div>
+                  <div class="">
+                    <button type="submit" class="mt-2 btn btn-success">Submit</button>
+                    <a href="/profile" class="mt-2 btn btn-light">Cancel</a>
+                </div>
+             </div>
+            </div>          
+                    
+        </form>
+        <% } %>
+    <% }) %>
+      </div>
+    </div>
+   </div> 
+  
+      
+        
+      
+    
+
+<%- include('partials/footer') -%>

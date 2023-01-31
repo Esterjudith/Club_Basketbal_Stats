@@ -29,16 +29,33 @@ module.exports = {
             console.log(err)
         }
     },
-    updatePlayer: async (req, res, next) => {
+    getEdit: async (req, res) => {
+        const id = req.params.id
+        console.log(id);
         try {
-            const id = req.params.id
-            const player = await Player.findById(id).exec()
+            const player = await Player.find()
+            res.render('edit.ejs', { player: player, playerId: id })
+        } catch (err) {
+            if (err) return res.status(500).send(err)
+        }
+    },
+    updatePlayer: async (req, res) => {
+        const id = req.params.id
+        try {
+            await Player.findByIdAndUpdate(
+                id,
+                {
+                    playerNumber: req.body.playerNumber,
+                    firstName: req.body.firstName,
+                    lastName: req.body.lastName,
+                    team: req.body.team,
+                },
+            )
             console.log("Player has been updated")
-            res.render('updatePlayer', {
-                player: player
-            });
+            res.redirect('/profile');
         } catch (error) {
             res.status(400).send(error.message)
+            res.redirect('/profile')
         }
     },
     deletePlayer: async (req, res) => {

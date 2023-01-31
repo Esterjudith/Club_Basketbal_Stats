@@ -149,13 +149,9 @@
                 </button>
                 </form>
               </td>
-              <!-- <td>
-                 <a
-                href="/updatePlayer.ejs/<%= player.id %>"
-                class="btn btn-sm btn-warning"
-                ><i class="fa fa-edit"></i
-              ></a>
-              </td> -->
+              <td>
+                <a href="/edit/<%=player._id%>">edit</a>
+              </td>
               <td>
                 <form
                     action="/players/deletePlayer/<%= player.id %>?_method=DELETE"
