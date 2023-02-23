@@ -1,16 +1,67 @@
-<%- include('partials/header') -%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Club_Basketball_stats</title>
 
-<main class="page pt-5">
-  <section class="d-flex justify-content-center pt-5">
-    <div
-      class="cards align-items-center column text-center pt-5 pb-5 w-50 mt-5"
-    >
-      <a href="/login" class="col-6 btn border-radius-m-3 btn-dark btn">
-        Login</a
-      >
-      <a href="/signup" class="col-6 btn m-3 btn-dark btn"> Signup</a>
-    </div>
-  </section>
-</main>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <!-- Desktop links -->
+        <ul class="taskbar-links desktop-links">
+          <li><a href="/login">log in</a></li>
+          <li><a href="/signup">sign up</a></li>
+        </ul>
 
-<%- include('partials/footer') -%>
+        <!-- Hamburger menu icon for mobile -->
+        <div class="hamburger-menu">
+          <span></span>
+        </div>
+
+        <!-- Mobile links (hidden by default) -->
+        <ul class="task-links mobile-links hidden">
+          <li><a href="/login">log in</a></li>
+          <li><a href="/signup">sign up</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- description of what club basketball is -->
+
+    <section class="image"></section>
+    <section class="text">
+      <h2>
+        What is
+        <span
+          >club <br />
+          basketball?</span
+        >
+      </h2>
+      <p>
+        Amateur Athletic Union also known as club basketball It’s played by
+        hundreds of thousands of American youth across the country. It refers to
+        non-school teams that are competing.
+      </p>
+    </section>
+
+    <!-- description of what tracker is used for -->
+
+    <section class="image"></section>
+    <section class="text">
+      <h1>With Club Basketball Stats Tracker</h1>
+      <p>
+        Coaches or score keepers are able to record accurate stats for each
+        player in their team during a game with the click of a button.
+      </p>
+    </section>
+
+    <footer>
+      <div></div>
+    </footer>
+    <script src="/index.js"></script>
+  </body>
+</html>
