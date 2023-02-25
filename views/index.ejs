@@ -5,25 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Club_Basketball_stats</title>
-
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <header class="header">
+    <header id="header">
       <nav>
-        <!-- Desktop links -->
-        <ul class="taskbar-links desktop-links">
-          <li><a href="/login">log in</a></li>
-          <li><a href="/signup">sign up</a></li>
-        </ul>
-
         <!-- Hamburger menu icon for mobile -->
-        <div class="hamburger-menu">
-          <span></span>
-        </div>
 
         <!-- Mobile links (hidden by default) -->
-        <ul class="task-links mobile-links hidden">
+        <aside class="sidebar hidden">
+          <sidebar-header>
+            <span class="material-symbols-outlined close-btn"> close </span>
+          </sidebar-header>
+
+          <ul>
+            <li><a href="/login">log in</a></li>
+            <li><a href="/signup">sign up</a></li>
+          </ul>
+        </aside>
+        <!-- Desktop links -->
+
+        <ul class="desktop-links">
           <li><a href="/login">log in</a></li>
           <li><a href="/signup">sign up</a></li>
         </ul>
@@ -32,7 +38,10 @@
 
     <!-- description of what club basketball is -->
 
-    <section class="image"></section>
+    <section class="image">
+      <span class="material-symbols-outlined open"> menu </span>
+    </section>
+
     <section class="text">
       <h2>
         What is

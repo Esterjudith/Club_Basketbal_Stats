@@ -7,17 +7,11 @@
   box-sizing: border-box;
 }
 
-/******************************************
-/* BASE STYLES
-/*******************************************/
 body {
   line-height: 150%;
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
-.header {
+/* .header {
   display: flex;
   position: sticky;
   top: 0;
@@ -27,8 +21,10 @@ body {
   padding: 20px;
   background: #1d1919;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+} */
+nav {
+  background: transparent;
 }
-
 p,
 h1,
 h2 {
@@ -73,41 +69,47 @@ span {
   font-size: 2rem;
 }
 
+.material-symbols-outlined {
+  position: fixed;
+  top: 1rem;
+  right: 3rem;
+  background: transparent;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  transition: 0.05s ease;
+}
+
+.desktop-links {
+  display: none;
+}
+
+.sidebar {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  width: 300px;
+  height: 25%;
+  background-color: #1d1919;
+  z-index: 99999;
+  overflow-x: hidden;
+  transition: 1s ease;
+}
+.aside ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
 a:hover {
   color: #6e6363;
 }
 
-/* Hide the mobile links by default */
-.mobile-links {
-  display: none;
-}
-
-/* Show the mobile links when the hamburger icon is clicked */
-.hamburger-menu span {
-  cursor: pointer;
-}
-
-.hamburger-menu span:after {
-  content: "☰";
-  color: #ffff;
-}
-
-li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 24px;
-}
-
-.hamburger-menu.active span:after {
-  content: "✖";
-}
-
-.hamburger-menu.active + .mobile-links {
-  display: block;
-}
-ul.taskbar-links.desktop-links {
-  display: none;
-}
 /* Login page */
 /* .form-label,
 p {
@@ -168,37 +170,3 @@ p {
 /******************************************
 /* Media Queries
 /*******************************************/
-
-/* Desktop nav bar */
-@media only screen and (min-width: 768px) {
-  .desktop-links {
-    display: block;
-  }
-  .mobile-links {
-    display: none;
-  }
-  .hamburger-menu {
-    display: none;
-  }
-
-  nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 24px;
-  }
-
-  nav li {
-    margin-right: 10px;
-  }
-
-  nav li:last-child {
-    margin-right: 0;
-  }
-}
