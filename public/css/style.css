@@ -1,14 +1,128 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
 
 * {
-  font-family: "Inter", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body {
-  line-height: 150%;
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 200%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  border-bottom: 1px solid #353637;
+  background: #1d1919;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(29, 25, 25, 0.75);
+  position: fixed;
+  top: 3.8rem;
+  right: 0;
+  z-index: 9999;
+  min-height: 25%;
+  width: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 1.5rem;
+  padding-bottom: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+.nav-menu.active {
+  width: 180px;
+}
+
+.nav-items {
+  padding-bottom: 1rem;
+  width: 95px;
+}
+
+.nav-links {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.nav-links:hover {
+  color: rgb(47, 173, 236);
+}
+
+.hamburger {
+  display: block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3x ease-in-out;
+  background-color: #fff;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar {
+    padding: 0;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: transparent;
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    min-height: 100%;
+    width: 200px;
+    overflow-x: none;
+    transition: 0.5s;
+    padding-top: 1.5rem;
+    padding-bottom: 10px;
+    border-radius: 0;
+    border: 1px solid #353637;
+  }
 }
 
 /* .header {
@@ -22,20 +136,6 @@ body {
   background: #1d1919;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 } */
-nav {
-  background: transparent;
-}
-p,
-h1,
-h2 {
-  position: relative;
-  z-index: 1;
-  margin: 20px 15%;
-}
-
-section {
-  padding: 40px 0;
-}
 
 .image {
   height: 300px;
@@ -43,14 +143,25 @@ section {
   background-attachment: fixed;
   background-position: center;
   background-image: url(../imgs/basketball-ref.jpg);
+  z-index: -1;
 }
+
+/* .forground::before {
+    content: "";
+    
+} */
 
 .text {
-  position: relative;
   color: #000000;
+  border: 2px solid red;
 }
 
-.text::before {
+.wrapper-img {
+  border: 2px solid black;
+  display: none;
+}
+
+/* .text::before {
   content: "";
   display: block;
   position: absolute;
@@ -61,55 +172,70 @@ section {
   width: 150%;
   height: 125%;
   background: #fff;
+} */
+
+.text .hero h2 {
+  /* margin-bottom: 1rem; */
+  font-size: 2.5rem;
 }
 
-span {
-  color: #ae4a11;
-  font-weight: 700;
-  font-size: 2rem;
+.hero p {
+  line-height: 2.4rem;
+  width: 100%;
 }
 
-.material-symbols-outlined {
-  position: fixed;
-  top: 1rem;
-  right: 3rem;
-  background: transparent;
-  cursor: pointer;
-  font-size: 2rem;
-  color: white;
-  transition: 0.05s ease;
-}
-
-.desktop-links {
-  display: none;
-}
-
-.sidebar {
-  position: absolute;
-  top: 2rem;
-  right: 3rem;
-  width: 300px;
-  height: 25%;
-  background-color: #1d1919;
-  z-index: 99999;
-  overflow-x: hidden;
-  transition: 1s ease;
-}
-.aside ul li {
+.text-details {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  height: auto;
+  border: 2px solid blue;
 }
 
-.hidden {
-  display: none;
+.text span {
+  color: #ae4a11;
+  font-weight: 700;
+  font-size: 2.5rem;
 }
 
-a:hover {
-  color: #6e6363;
+h1 {
+  white-space: nowrap;
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
+  font-size: 3rem;
+  font-weight: 700;
 }
 
+p {
+  font-size: 2rem;
+  font-weight: 300;
+  border: 1px solid black;
+}
+
+.text .hero {
+  padding: 40px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .forground {
+    margin-left: 18rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .wrapper-img {
+    display: block;
+    padding: 1rem;
+    /* margin-right: 2rem; */
+  }
+
+  .text {
+    width: 50%;
+    /* margin-left: 15.5rem; */
+  }
+}
 /* Login page */
 /* .form-label,
 p {
