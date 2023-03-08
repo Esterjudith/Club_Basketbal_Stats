@@ -38,7 +38,7 @@ a {
   flex-direction: column;
   align-items: center;
   background-color: rgba(29, 25, 25, 0.75);
-  position: fixed;
+  position: absolute;
   top: 3.8rem;
   right: 0;
 }
@@ -125,7 +125,6 @@ a {
     padding-top: 1.5rem;
     padding-bottom: 10px;
     border-radius: 0;
-    border: 1px solid #353637;
   }
 }
 
@@ -164,6 +163,7 @@ a {
   padding-top: 30px;
   padding-right: 5px;
   z-index: 2;
+  animation: slideInLeft 1s ease-in;
 }
 
 .col-2 {
@@ -213,6 +213,7 @@ a {
   margin-top: 20px;
   width: 350px;
   padding-left: 45px;
+  animation: slideInRight 1s ease-in;
 }
 
 /* Utility classes */
@@ -229,10 +230,6 @@ a {
   }
 }
 
-.col-1 img {
-  animation: slideInLeft 1s ease-in;
-}
-
 @keyframes slideInRight {
   from {
     transform: translateX(700px);
@@ -243,7 +240,7 @@ a {
   }
 }
 
-.col-4 img {
+.show {
   animation: slideInRight 1s ease-in;
 }
 
