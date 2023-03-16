@@ -8,3 +8,14 @@ hamburger.addEventListener("click", () => {
 })
 
 
+
+let image = document.querySelector(".col-4 img")
+gsap.from(image, {
+    ScrollTrigger: {
+        trigger: image,
+        start: "top top",
+    },
+    x: 700,
+    duration: 5
+})
+
