@@ -3,7 +3,7 @@ module.exports = {
   content: ["**/*.{ejs, js}", "**/**/*.{ejs, js}"],
   theme: {
     fontFamily: {
-      'Roboto': ['Roboto', 'sans-serif'],
+      'Inter': ['Inter', 'sans-serif'],
     },
     extend: {},
   },
