@@ -1,14 +1,13 @@
 <%- include('partials/header') -%>
 
-<main class="border-2 border-green-700">
+<main class="md:flex md:justify-center">
   
-<!--     
-    <div class="border-2 border-blue-600 rounded-md md:w-1/2 lg:w-1/2 flex" style="background-image:url('..\pulic\imgs\girlPlayer.jpg)">      
-        <img src="imgs\girlPlayer.jpg" alt="">
-      </div> -->
-      <section class="border-2 border-red-600 mt-6">
-        <div class=" border-2 border-black p-5 flex justify-center items-center mt-5">
-          <img src="imgs\basketball-305775_640.png"  class="border-2 border-yellow-600 w-[90px]" alt="basketball">
+    
+    <div class="md:rounded md:w-[456px] md:h-[550px] md:mr-2 mt-6" style="background-image:url('/imgs/girlPlayer.jpg');"> 
+      </div>
+      <section class=" md:rounded border-[1px] border-[#DBD6D6] md:w-[456px] md:h-[550px] mt-6">
+        <div class="  p-5 flex justify-center items-center mt-5">
+          <img src="imgs\basketball-305775_640.png"  class=" w-[90px]" alt="basketball">
       </div>
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
         <div class="alert alert-danger"><%= el.msg %></div>
@@ -17,7 +16,7 @@
             <div class="alert alert-info"><%= el.msg %></div>
             <% }) %> <% } %>
             <form action="/login" method="POST" class="p-6 flex flex-col justify-center">
-              <div class=" flex flex-col justify-center"> 
+              <div class="  flex flex-col justify-center"> 
                 <div class=" mb-3 w-full">
                   <!-- <label for="exampleInputEmail1" class="form-label"
                     >Email address</label
