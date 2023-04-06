@@ -16,6 +16,6 @@ gsap.from(image, {
         start: "top top",
     },
     x: 700,
-    duration: 3
+    duration: 5
 })
 

@@ -1,12 +1,4 @@
-<%- include('partials/header') -%>
-
-<main class="border-2 border-green-700">
-  
-<!--     
-    <div class="border-2 border-blue-600 rounded-md md:w-1/2 lg:w-1/2 flex" style="background-image:url('..\pulic\imgs\girlPlayer.jpg)">      
-        <img src="imgs\girlPlayer.jpg" alt="">
-      </div> -->
-      <section class="border-2 border-red-600 mt-6">
+<section class="border-2 border-red-600 mt-6">
         <div class=" border-2 border-black p-5 flex justify-center items-center mt-5">
           <img src="imgs\basketball-305775_640.png"  class="border-2 border-yellow-600 w-[90px]" alt="basketball">
       </div>
@@ -50,5 +42,3 @@
         
        
 </main>
-
-<%- include('partials/footer') -%>
