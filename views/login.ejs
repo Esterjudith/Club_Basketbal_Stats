@@ -1,27 +1,28 @@
 <%- include('partials/header') -%>
 
-<main class="md:flex md:justify-center">
-  
-    
-    <div class="md:rounded md:w-[456px] md:h-[550px] md:mr-2 mt-6" style="background-image:url('/imgs/girlPlayer.jpg');"> 
+<main class="pt-10 md:flex md:justify-center">
+      <!-- Image  -->
+    <div class="md:rounded md:w-[456px] md:h-[550px] md:mr-2 mt-6 drop-shadow-2xl" style="background-image:url('/imgs/girlPlayer.jpg');"> 
       </div>
-      <section class=" md:rounded border-[1px] border-[#DBD6D6] md:w-[456px] md:h-[550px] mt-6">
+      <!-- Log-in form -->
+      <section class="md:bg-white md:drop-shadow-xl md:rounded md:border-[1px] md:border-[#DBD6D6] md:w-[456px] md:h-[550px] mt-6">
         <div class="  p-5 flex justify-center items-center mt-5">
           <img src="imgs\basketball-305775_640.png"  class=" w-[90px]" alt="basketball">
       </div>
-      <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
-        <div class="alert alert-danger"><%= el.msg %></div>
+
+    
+
+      <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>        
+        <div class="text-red-500"><%= el.msg %></div>  
         <% }) %> <% } %> <% if (locals.messages.info) { %> <%
           messages.info.forEach( el => { %>
-            <div class="alert alert-info"><%= el.msg %></div>
+            <div class=""><%= el.msg %></div>
             <% }) %> <% } %>
+
             <form action="/login" method="POST" class="p-6 flex flex-col justify-center">
               <div class="  flex flex-col justify-center"> 
                 <div class=" mb-3 w-full">
-                  <!-- <label for="exampleInputEmail1" class="form-label"
-                    >Email address</label
-                    > -->
-                    <input
+                  <input
                     type="email"
                     class="border-[1px] border-[#DBD6D6] p-2 w-full text-md text-[
                     #A49C9C] rounded  bg-[#F3F3F3]"
@@ -47,7 +48,7 @@
               </form>
             </section>
         
-       
+            
 </main>
 
 <%- include('partials/footer') -%>
