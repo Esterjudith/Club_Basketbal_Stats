@@ -1,63 +1,82 @@
 <%- include('partials/header') -%>
-<main class="container">
-  <div class="row justify-content-center">
-    <section class="col-6 mt-5">
+<main class="">
+  <div class=" pt-10 md:flex md:justify-center">
+    <section class=" md:bg-white md:drop-shadow-xl md:rounded md:border-[1px] md:border-[#DBD6D6] md:w-[650px] md:h-[750px] mt-6">
+      <div class="  p-5 flex justify-center items-center mt-5">
+        <img src="imgs\basketball-305775_640.png"  class=" w-[90px]" alt="basketball">
+    </div>
+
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
       <% }) %> <% } %> <% if (locals.messages.info) { %> <%
       messages.info.forEach( el => { %>
       <div class="alert alert-info"><%= el.msg %></div>
       <% }) %> <% } %>
-      <form action="/signup" method="POST">
+      <form action="/signup" method="POST" class="p-6 flex flex-col justify-center">
         <div class="mb-3">
-          <label for="userName" class="form-label">User Name</label>
+          <!-- <label for="userName" class="form-label">User Name</label> -->
           <input
             type="text"
-            class="form-control"
+            class="border-[1px] border-[#DBD6D6] p-2 w-full text-md text-[
+            #A49C9C] rounded  bg-[#F3F3F3]"
             id="userName"
             name="userName"
+            placeholder="User name"
           />
         </div>
         <div class="mb-3">
-          <label for="team" class="form-label">Team Name</label>
-          <input type="text" class="form-control" id="team" name="team" />
+          <!-- <label for="team" class="form-label">Team Name</label> -->
+          <input type="text" 
+          class="border-[1px] border-[#DBD6D6] p-2 w-full text-md text-[
+          #A49C9C] rounded  bg-[#F3F3F3]" 
+          id="team" 
+          name="team" 
+          placeholder="Team name"
+          />
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
+          <!-- <label for="exampleInputEmail1" class=""
             >Email address</label
-          >
+          > -->
           <input
             type="email"
-            class="form-control"
+            class="border-[1px] border-[#DBD6D6] p-2 w-full text-md text-[
+            #A49C9C] rounded  bg-[#F3F3F3]"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             name="email"
+            placeholder="Email address"
           />
-          <div id="emailHelp" class="form-text">
+          <div id="emailHelp" class="mt-2">
             We'll never share your email with anyone else.
           </div>
         </div>
         <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
+          <!-- <label for="password" class="">Password</label> -->
           <input
             type="password"
-            class="form-control"
+            class="border-[1px] border-[#DBD6D6] p-2 w-full text-md text-[
+            #A49C9C] rounded  bg-[#F3F3F3]"
             id="password"
             name="password"
+            placeholder="Password"
           />
         </div>
         <div class="mb-3">
-          <label for="confirmPassword" class="form-label"
+          <!-- <label for="confirmPassword" class="form-label"
             >Confirm Password</label
-          >
+          > -->
           <input
             type="password"
-            class="form-control"
+            class="border-[1px] border-[#DBD6D6] p-2 w-full text-md text-[
+            #A49C9C] rounded  bg-[#F3F3F3]"
             id="confirmPassword"
             name="confirmPassword"
+            placeholder="Confirm Password"
           />
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="mt-2  row-span-full font-Inter font-bold text-xl text-white rounded-md bg-[#2E2929]  p-2 w-full">Sign up</button>
+        <p>Have an account? <a href="/login" class="text-blue-500 hover:font-semibold">Log in</a></p>
       </form>
     </section>
   </div>
