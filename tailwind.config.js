@@ -5,7 +5,11 @@ module.exports = {
     fontFamily: {
       'Inter': ['Inter', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'bg-main':"url('/imgs/basketball-4559470_640.jpg')",
+      }
+    },
   },
   plugins: [
     {
