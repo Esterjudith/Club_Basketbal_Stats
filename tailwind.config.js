@@ -10,7 +10,7 @@ module.exports = {
         'bg-main':"url('/imgs/basketball-4559470_640.jpg')",
       },
       padding: {
-        'th': '1rem 0 0 0'
+        'th': '0.5rem 0 0 0'
       }
     },
   },
