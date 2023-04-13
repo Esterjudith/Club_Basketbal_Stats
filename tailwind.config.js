@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         'bg-main':"url('/imgs/basketball-4559470_640.jpg')",
+      },
+      padding: {
+        'th': '1rem 0 0 0'
       }
     },
   },
