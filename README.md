@@ -2,7 +2,7 @@
 
 In this app is for club basketball :basketball: teams to keep track of each of their players stats and store it in a database.
 
-https://clubbasketballstatstracker.cyclic.app/
+
 
 https://user-images.githubusercontent.com/106325339/201497517-15459e60-d243-458e-b4a4-0accf5f5af85.mp4
 
