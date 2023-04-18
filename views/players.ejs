@@ -1,75 +1,76 @@
 <%- include('partials/header') -%>
 
-        <div class="card card-player">
-          <div class="card-header">
-             <h4 class="font-weight-bold">Add New Player</h4>
+    <main class="pt-10 bg-none md:bg-main md:bg-cover md:flex md:justify-center"
+    style="background-image:url('/imgs/basketball-4559470_640.jpg')"
+    >
+        <div class="pt-10 pb-5 md:flex md:justify-center">
+          <section class="pt-32 md:pt-14 md:bg-white md:bg-opacity-10 md: backdrop-blur-12 md:rounded md:w-[650px] md:h-[750px]">
+         
+          <div class="font-Inter font-semibold ml-4">
+             <h4 class="font-weight-bold text-white mb-2">Add New Player</h4>
           </div>
-          <div class="card-body">
-            <form action="/players/addPlayer" id="add_player_form" method="POST">
-             <div class="row">
-                <div class="col-6">
-                  <div class="form-group">
-                    <label class="col-form-label" for="playerNumber"
-                    ></label
-                    >
+          <div class="">
+            <form action="/players/addPlayer" id="add_player_form" method="POST" class=" mx-4">
+              <div >
+             <div class="mb-3">                
                     <input
                     type="number"
-                    class="form-control"
+                    class="border-[1px] border-[#DBD6D6] p-2 w-full md:w-60 text-md text-[
+                    #A49C9C] rounded  bg-[#F3F3F3]"
                     name="playerNumber"
                     placeholder="enter team number"
                     id="playerNumber"
-                    />
-                </div>
-              </div>
+                    />               
             </div>
-            <div class="col-6">
-                <div class="form-group">
-                <label class="col-form-label" for="team"></label>
+            <div class="mb-3">       
+               
                 <input
                     type="text"
-                    class="form-control"
+                    class="border-[1px] border-[#DBD6D6] p-2 w-full md:w-96 text-md text-[
+                    #A49C9C] rounded  bg-[#F3F3F3]"
                     name="team"
                     placeholder="enter team"
                     id="team"
                 />
-                </div>
-            </div>
-            
-                <div class="col-6">
-                <div class="form-group">
-                    <label class="col-form-label" for="firstName"></label>
+                
+            </div>            
+              
+                <div class="mb-3">                    
                     <input
                     type="text"
-                    class="form-control"
+                    class="border-[1px] border-[#DBD6D6] p-2 w-full md:w-96 text-md text-[
+                    #A49C9C] rounded  bg-[#F3F3F3]"
                     name="firstName"
                     placeholder="enter first name"
                     id="firstName"
-                    />
+                    />              
                 </div>
-                </div>
-                <div class="col-6">
-                <div class="form-group">
-                    <label class="col-form-label" for="lastName"></label>
+               
+                <div class="mb-3">
+                    
                     <input
                     type="text"
-                    class="form-control"
+                    class="border-[1px] border-[#DBD6D6] p-2 w-full md:w-96 text-md text-[
+                    #A49C9C] rounded  bg-[#F3F3F3]"
                     name="lastName"
                     placeholder="enter last name"
                     id="lastName"
                     />
+                 </div>
+                </div> 
+                <div class="">
+                    <button type="submit" class="mt-2 btn btn-success hover:bg-green-500 mr-3">Submit</button>
+                    <a href="/profile" class="mt-2 btn btn-light hover:bg-gray-600">Cancel</a>
                 </div>
-                  <div class="">
-                    <button type="submit" class="mt-2 btn btn-success">Submit</button>
-                    <a href="/profile" class="mt-2 btn btn-light">Cancel</a>
-                </div>
+                            
+              </form>
              </div>
-            </div>
-            
-                    
-        </form>
-      </div>
-    </div>
-   </div> 
+            </section>  
+          </div>               
+        </div>  
+      </main>
+   
+
   
       
         

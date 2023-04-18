@@ -1,167 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Club_Basketball_stats</title>
-    <!-- <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/imgs/favicon-32x32.png"
-    /> -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body>
+<%- include('partials/header') -%>
    
   
-<div class="container">
-  <div class="row mt-5">
-    <div class="col-12">
-      <div>
-        <p><strong>User Name</strong>: <%= user.userName %></p>
-        <p><strong>Email</strong>: <%= user.email %></p>
-        <a href="/logout" class="col-3 btn btn-dark">Logout</a>
-      </div>
+<div class="mt-8 mx-4">  
+    <div class=" py-2 px-3 ">
+      <div class="hidden bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 md:flex flex-row items-center justify-between rounded-lg py-1">
+        <p class="text-[30px] font-bold font-Inter px-4 bg-">Hi <%= user.userName %>!</p>
+        
+        <a href="/logout" class="rounded-md px-4 py-1 mr-4 bg-gray-700 text-white font-bold">Log out</a>
+      </div>  
 
-    <div class="card">
-        <div class="card-header">
-            <div class="row">
-                    <div class="col-8">
-                        <h4 class="font-weight-bold">Team</h4>
-                    </div>
-                  <div class="col-4">
-                    <a href="/players" class="btn btn-dark float-right"><i class="fa fa-lus mr-1"></i>Add Player</a>
-                  </div>
-                </div>
-            </div>
-        </div>
+      <div class=" mt-2">
+        <a href="/players" class="btn btn-dark">Add Player</a>
+      </div>                 
+        
     </div>
-      <div class="mt-5">
-        <table id="table" class="table table-striped table-dark">
-          <thead>
-            <tr>
-              <th scope="col">Player #</th>
-              <th scope="col">First Name</th>
-              <th scope="col">Last Name</th>
-              <th class="" scope="col">Points</th>
-              <th class="ml-2" scope="col">Rebounds</th>
-              <th class="ml-2" scope="col">Steals</th>
-              <th class="ml-2" scope="col">Assist</th>
-              <th class="ml-2" scope="col">Blocks</th>
-              <th class="ml-2" scope="col"></th>
-              <!-- <th scope="col"></th> -->
+      <div class="p-3 border-2 md:overflow-x-auto">
+        <table id="table" class="table table-zebra w-full">
+          <thead class="hidden md:table-header-group">
+            <tr class="mb-[15px] md:table-row">
+              <th>Player #</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th class="text-left">Points</th>
+              <th class="text-left">Rebounds</th>
+              <th class="text-left">Steals</th>
+              <th class="text-left">Assists</th>
+              <th class="text-left">Blocks</th>
+              <th>#</th>
+              <th>#</th>            
             </tr>
           </thead>
           <tbody>
             <% if(players.length > 0){ %> <% for(let player of players) { %>
-            <tr>
-              <th scope="row"><%= player.playerNumber %></th>
-              <td><%= player.firstName %></td>
-              <td><%= player.lastName %></td>
-              <td>
+            <tr class="divide-y divide-slate-300 md:divide-y-0">
+              <td data-label="Player #" class="before:content-[attr(data-label)] before:absolute before:left-0 before:w-[50%] before:pl-[15px] before:text-left md:before:hidden font-bold block w-full md:w-auto text-right pl-[50%] relative md:static md:text-left md:table-cell md:pl-2 "><%= player.playerNumber %></td>
+              <td data-label="First Name" class="before:content-[attr(data-label)] before:absolute before:left-0 before:w-[50%] before:pl-[15px] before:text-left md:before:hidden before:font-bold block w-full md:w-auto text-right pl-[50%] relative md:static md:text-left md:table-cell md:pl-2"><%= player.firstName %></td>
+              <td data-label="Last Name" class="before:content-[attr(data-label)] before:absolute before:left-0 before:w-[50%] before:pl-[15px] before:text-left md:before:hidden before:font-bold block w-full md:w-auto text-right pl-[50%] relative md:static md:text-left md:table-cell md:pl-2"><%= player.lastName %></td>
+              <!-- Point stats -->
+              <td data-label="Points" class="before:content-[attr(data-label)] before:absolute before:left-0 before:w-[50%] before:pl-[15px] before:text-left md:before:hidden before:font-bold block w-full md:w-auto text-right pl-[50%] relative md:static md:text-left md:table-cell md:pl-2">
+               <div class="flex justify-end md:justify-start">
                 <form
-                  class="pointer"
+                  class=""
                   action="/players/deletePoint/<%= player.id %>?_method=PUT"
                   method="POST">                
-                  <button  class="btn btn-secondary" type="submit">-</button>
-                </form>
-                <%= player.points %><form
-                  class="pointer"
-                  action="/players/addPoint/<%= player.id %>?_method=PUT"
-                  method="POST"
+                  <button  class="btn btn-circle" type="submit">-</button>
+                </form>    
+                 <div class="flex items-center text-lg p-1 font-semibold ">          
+                  <%= player.points %>
+                </div> 
+                  <form
+                   class="pointer"
+                   action="/players/addPoint/<%= player.id %>?_method=PUT"
+                   method="POST"
                 ><button
-                  class="btn btn-secondary"
+                  class="btn btn-circle"
                   type="submit"
                 >+</button>
                 </form>
+               </div> 
               </td>
-              <td>
+              <!-- Rebound stats -->
+              <td data-label="Rebounds" class="before:content-[attr(data-label)] before:absolute before:left-0 before:w-[50%] before:pl-[15px] before:text-left md:before:hidden before:font-bold block w-full md:w-auto text-right pl-[50%] relative md:static md:text-left md:table-cell md:pl-2">
+              <div class="flex justify-end md:justify-start"> 
                 <form
                   class="pointer"
                   action="/players/deleteRebound/<%= player.id %>?_method=PUT"
                   method="POST">                   
-                <button class="btn btn-secondary" type="submit">-</button>
+                <button class="btn btn-circle" type="submit">-</button>
                 </form>
-                <%= player.rebounds %><form
+                <div class="flex items-center text-lg p-1 font-semibold">
+                 <%= player.rebounds %>
+                </div>
+                <form
                   class="pointer"
                   action="/players/addRebound/<%= player.id %>?_method=PUT"
-                  method="POST"><button  class="btn btn-secondary" type="submit">
+                  method="POST"><button  class="btn btn-circle" type="submit">
                   +
                 </button>
                 </form>
+              </div>  
               </td>
-              <td>
+              <!-- Steals stats -->
+              <td data-label="Steals" class="before:content-[attr(data-label)] before:absolute before:left-0 before:w-[50%] before:pl-[15px] before:text-left before:font-bold md:before:hidden  block w-full md:w-auto text-right pl-[50%] relative md:static md:text-left md:table-cell md:pl-2">
+                <div class="flex justify-end md:justify-start">
                 <form
                   class="pointer"
                   action="/players/deleteSteal/<%= player.id %>?_method=PUT"
                   method="POST">                   
-                <button  class="btn btn-secondary" type="submit">-</button>
+                <button  class="btn btn-circle" type="submit">-</button>
                </form>
-                <%= player.steals %><form
+               <div class="flex items-center text-lg p-1 font-semibold">
+                <%= player.steals %>
+              </div>
+                <form
                   class="pointer"
                   action="/players/addSteal/<%= player.id %>?_method=PUT"
-                  method="POST"><button  class="btn btn-secondary" type="submit">
+                  method="POST"><button  class="btn btn-circle" type="submit">
                   +
                 </button>
                 </form>
+              </div>
               </td>
-              <td>
+              <!-- Assist stats -->
+              <td data-label="Assist" class="before:content-[attr(data-label)] before:absolute before:left-0 before:w-[50%] before:pl-[15px] before:text-left before:font-bold md:before:hidden block w- md:w-auto text-right pl-[50%] relative md:static md:text-left md:table-cell md:pl-2">
+                <div class="flex justify-end md:justify-start">
                  <form
                   class="pointer"
                   action="/players/deleteAssist/<%= player.id %>?_method=PUT"
                   method="POST">                   
-                <button  class="btn btn-secondary" type="submit">-</button>
+                <button  class="btn btn-circle" type="submit">-</button>
                </form>
-                <%= player.assists %><form
+               <div class="flex items-center text-lg p-1 font-semibold">
+                <%= player.assists %>
+               </div>
+                <form
                   class="pointer"
                   action="/players/addAssist/<%= player.id %>?_method=PUT"
-                  method="POST"><button  class="btn btn-secondary" type="submit">
+                  method="POST"><button  class="btn btn-circle" type="submit">
                   +
                 </button>
                 </form>
+              </div>  
               </td>
-               <td>
+              <!-- Blocks -->
+               <td data-label="Blocks" class="before:content-[attr(data-label)] before:absolute before:left-0 before:w-[50%] before:pl-[15px] before:text-left before:font-bold md:before:hidden block w-full md:w-auto text-right pl-[50%] relative md:static md:text-left md:table-cell md:pl-2">
+                <div class="flex justify-end md:justify-start">
                  <form
                   class="pointer"
                   action="/players/deleteBlock/<%= player.id %>?_method=PUT"
                   method="POST">                   
-                <button  class="btn btn-secondary" type="submit">-</button>
+                <button  class="btn btn-circle" type="submit">-</button>
                </form>
-                <%= player.blocks %><form
+               <div class="flex items-center text-lg p-1 font-semibold">
+                <%= player.blocks %>
+              </div>
+                <form
                   class="pointer"
                   action="/players/addBlock/<%= player.id %>?_method=PUT"
-                  method="POST"><button  class="btn btn-secondary" type="submit">
+                  method="POST"><button  class="btn btn-circle" type="submit">
                   +
                 </button>
                 </form>
+              </div>
+               </td>
+               <!-- Edit -->
+              <td data-label="#" class="before:content-[attr(data-label)] before:absolute before:left-0 before:w-[50%] before:pl-[15px] before:text-left md:before:hidden before:font-bold block w-full md:w-auto text-right pl-[50%] relative md:static md:text-left md:table-cell md:pl-2">
+                <a href="/edit/<%=player._id%>" class="">
+                  <svg class="w-7 ml-auto md:ml-0"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"></path>
+                  </svg>
+                   Edit
+                </a>
               </td>
-              <td>
-                <a href="/edit/<%=player._id%>">edit</a>
-              </td>
-              <td>
+              <!-- Delete -->
+              <td data-label="#" class="before:content-[attr(data-label)] before:absolute before:left-0 before:w-[50%] before:pl-[15px] before:text-left md:before:hidden before:font-bold block w-full md:w-auto text-right pl-[50%] relative md:static md:text-left md:table-cell md:pl-2">
                 <form
                     action="/players/deletePlayer/<%= player.id %>?_method=DELETE"
                     method="POST"
-                    class="col-3"
+                    class="font-semibold"
                 >
-                <button
-                class="btn btn-sm btn-danger"
-                ><i class="fa fa-trash" type="submit"></i                
-              ></button>
+                <button 
+                type="submit">
+                  <svg class="w-7 ml-auto md:ml-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                  </svg> 
+                  Delete       
+                </button>
+                 
                 </form>
               </td>
               
@@ -174,9 +179,8 @@
             <% } %>
           </tbody>
         </table>
-      </div>
+      </div>   
     </div>
-  </div>
-</div>
-</body>
-</html>
+   </body>
+  </html>
+ <%- include('partials/footer') -%>

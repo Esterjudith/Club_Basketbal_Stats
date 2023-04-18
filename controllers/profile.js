@@ -1,4 +1,3 @@
-const Stat = require("../models/Stat")
 const Player = require("../models/Player")
 
 module.exports = {
