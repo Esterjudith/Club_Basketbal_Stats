@@ -4,7 +4,9 @@
   "description": "Keep tracks of stats",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js "    
+    "start": "node server.js ",
+    "dev": "nodemon server.js",
+    "css": "npx tailwindcss -i ./public/css/input.css -o ./public/output.css --watch"      
   },
   "author": "JudyH",
   "license": "MIT",
