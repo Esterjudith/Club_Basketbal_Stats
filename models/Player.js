@@ -13,10 +13,7 @@ const PlayerSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    team: {
-        type: String,
-        require: false,
-    },
+
     points: {
         type: Number,
         require: true,

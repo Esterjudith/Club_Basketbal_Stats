@@ -1,80 +1,69 @@
 <%- include('partials/header') -%>
 
-        <div class="card card-player">
-          <div class="card-header">
-             <h4 class="font-weight-bold">edit Player</h4>
-          </div>
-          <div class="card-body">
+        <main class="pt-10 bg-none md:bg-main md:bg-cover md:flex md:justify-center">
+         
+          <div class="md:bg-blue-300 md:rounded pt-10 pb-5 md:flex md:justify-center p-2">
+            <section class="pt-32 md:pt-5 md:bg-white md:bg-opacity-10 md: backdrop-blur-12 md:rounded md:w-[650px] md:h-[650px]">
+            <div class="mb-5 font-Inter font-semibold ml-1 text-2xl">
+              <h4 class="font-weight-bold text-black mb-2">Edit Player</h4>
+           </div>
            <% player.forEach(player=> { %>
              <% if(player._id == playerId) { %>
-            <form action="/edit/updatePlayer/<%= player._id%>" id="edit_player_form" method="POST">
-             <div class="row">
-                <div class="col-6">
-                  <div class="form-group">
-                    <label class="col-form-label" for="playerNumber"
-                    ></label
-                    >
-                    <input
+            <form action="/edit/updatePlayer/<%= player._id%>" id="edit_player_form" method="POST" class="mx-4">
+             
+                <div class="mb-3">  
+                  <label class="font-Inter font-semibold" for="playerNumber">Player Number:</label>                  
+                  <input
                     type="number"
-                    class="form-control"
+                    class="border-[1px] border-[#DBD6D6] p-2 w-full md:w-60 text-md text-[
+                    #A49C9C] rounded  bg-[#F3F3F3]"
                     name="playerNumber"
                     placeholder="enter team number"
                     id="playerNumber"
                     value="<%=player.playerNumber %>"
-                    />
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-                <div class="form-group">
-                <label class="col-form-label" for="team"></label>
-                <input
-                    type="text"
-                    class="form-control"
-                    name="team"
-                    placeholder="enter team"
-                    id="team"
-                    value="<%=player.team %>"
-                />
-                </div>
+                    />                  
             </div>
             
-                <div class="col-6">
-                <div class="form-group">
-                    <label class="col-form-label" for="firstName"></label>
-                    <input
+            
+                <div class="mb-3">  
+                  <label class="font-Inter font-semibold" for="playerNumber">First Name:</label>                              
+                  <input
                     type="text"
-                    class="form-control"
+                    class="border-[1px] border-[#DBD6D6] p-2 w-full md:w-60 text-md text-[
+                    #A49C9C] rounded  bg-[#F3F3F3]"
                     name="firstName"
                     placeholder="enter first name"
                     id="firstName"
                     value="<%=player.firstName %>"
                     />
+                
                 </div>
-                </div>
-                <div class="col-6">
-                <div class="form-group">
-                    <label class="col-form-label" for="lastName"></label>
+               
+                <div class="mb-3">
+                  <label class="font-Inter font-semibold" for="playerNumber">Last Name:</label> 
                     <input
                     type="text"
-                    class="form-control"
+                    class="border-[1px] border-[#DBD6D6] p-2 w-full md:w-60 text-md text-[
+                    #A49C9C] rounded  bg-[#F3F3F3]"
                     name="lastName"
                     placeholder="enter last name"
                     id="lastName"
                     value="<%=player.lastName %>"
                     />
                 </div>
-                  <div class="">
-                    <button type="submit" class="mt-2 btn btn-success">Submit</button>
-                    <a href="/profile" class="mt-2 btn btn-light">Cancel</a>
+                  <div class="mb-3">
+                    <button type="submit" class="mt-2 btn btn-success hover:bg-green-500 mr-3">Submit</button>
+                    <a href="/profile" class="mt-2 btn btn-light hover:bg-gray-600">Cancel</a>
                 </div>
-             </div>
-            </div>          
+             
+                      
                     
         </form>
         <% } %>
     <% }) %>
+       </section>
       </div>
+     </main>
     </div>
    </div> 
   
