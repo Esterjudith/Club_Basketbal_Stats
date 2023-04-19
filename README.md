@@ -19,10 +19,10 @@ In this app is for club basketball :basketball: teams to keep track of each of t
 
 # How it's made:
 
-##Teck used: Javascript, CSS, Bootstrap, Node.js, Express
+##Teck used:  Node.js, Express, EJS, Javascript, Passport, TailwindCSS, CSS, RESTAPIs
 
-With the use of MVC we can separate the router, connection to the database (model) and the asynchronize code in the controller to make it earsier to read.
-The page is rendered using EJS templating and Bootstrap with some CSS thrown in . When the user loads the page their http request gets the login/sign up page as a response once the user is validated with passport their profile is rendered to the user. In the profile page user can see the stats chart for each player, in here the user can add new players by clicking into the players page and they can keep track the stats for each player during the game.
+Used MVC structure to make the router, database (model), and controller code easier to read.
+The page is rendered using EJS templating, styling with vanilla CSS for the landing page and TailwindCSS for the remainding pages. When the user loads the page their http request gets the login/sign up page as a response once the user is validated with passport their profile is rendered to the user. In the profile page user can see the stats chart for each player, in here the user can add new players by clicking into the players page and they can keep track the stats for each player during the game.
 Instead of updatings each stat with a put request I have nested each +/- button in a form and used the post request with method-override middleware in order to change the post request value as a put request.
 
 #Optimizations
