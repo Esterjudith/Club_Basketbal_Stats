@@ -15,8 +15,10 @@ In this app is for club basketball :basketball: teams to keep track of each of t
 <img width="823" alt="Screenshot 2023-04-18 174851" src="https://user-images.githubusercontent.com/106325339/232938678-d9b493b1-37db-4499-8b11-ed8e7fdedb50.png">
 
 
-
-
+# How to install:
+```highlight
+npm install
+```
 # How it's made:
 
 ##Teck used:  Node.js, Express, EJS, Javascript, Passport, TailwindCSS, CSS, RESTAPIs
