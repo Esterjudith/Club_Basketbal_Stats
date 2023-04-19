@@ -11,7 +11,7 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const editRoutes = require("./routes/edit");
 const playerRoutes = require("./routes/players");
-
+const PORT = 8000
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -62,8 +62,8 @@ app.use("/edit", editRoutes)
 
 //Server Running
 connectDB().then(() => {
-    app.listen(process.env.PORT, () => {
-        console.log("Server is running, you better catch it!");
+    app.listen(process.env.PORT || PORT, () => {
+        console.log(`Server is running on ${PORT}, you better catch it!`);
     });
 })
 
