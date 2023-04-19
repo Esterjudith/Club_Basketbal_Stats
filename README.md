@@ -16,6 +16,7 @@ In this app is for club basketball :basketball: teams to keep track of each of t
 
 
 # How to install:
+Clone repo and install dependencies:
 ```highlight
 npm install
 ```
