@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js ",
     "dev": "nodemon server.js",
-    "css": "npx tailwindcss -i ./public/css/input.css -o ./public/output.css --watch"      
+    "css": "npx tailwindcss -i ./public/css/input.css -o ./public/output.css --minify --watch"      
   },
   "author": "JudyH",
   "license": "MIT",
