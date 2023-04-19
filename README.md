@@ -20,6 +20,12 @@ Clone repo and install dependencies:
 ```highlight
 npm install
 ```
+to run :
+```highlight
+npm start
+npm run css
+```
+
 # How it's made:
 
 ##Teck used:  Node.js, Express, EJS, Javascript, Passport, TailwindCSS, CSS, RESTAPIs
