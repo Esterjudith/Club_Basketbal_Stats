@@ -4,6 +4,10 @@ This is a backend app for club basketball :basketball: teams to keep track of ea
 
 https://clubbasketballstatstracker.cyclic.app/
 
+
+https://user-images.githubusercontent.com/106325339/233479142-26287943-3e47-492b-a315-82c64ba6be99.mp4
+
+
 <img width="944" alt="club_Basketball_landingpage1" src="https://user-images.githubusercontent.com/106325339/232938258-6c77dde8-7806-4e2f-9a1a-0e60866fabde.png">
 <img width="948" alt="Club_Basketball_landingpage2" src="https://user-images.githubusercontent.com/106325339/232938277-4d1ed84b-994a-4c02-b881-4ce9922b6348.png">
 <img width="194" alt="landing_page_mobile1" src="https://user-images.githubusercontent.com/106325339/232938338-92c1d34a-7be6-4ec9-a7f4-ea52cab13ba0.png">
