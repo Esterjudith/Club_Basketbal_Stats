@@ -1,6 +1,6 @@
 # Club basketball stats tracker
 
-In this app is for club basketball :basketball: teams to keep track of each of their players stats and store it in a database.
+This is a backend app for club basketball :basketball: teams to keep track of each of their players stats and store it in a database.
 
 https://clubbasketballstatstracker.cyclic.app/
 
@@ -30,15 +30,11 @@ npm run css
 
 # How it's made:
 
-##Teck used:  Node.js, Express, EJS, Javascript, Passport, TailwindCSS, CSS, RESTAPIs
+##Teck used:  Node.js, Express, EJS, Javascript, Passport, TailwindCSS, CSS, REST APIs
 
 Used MVC structure to make the router, database (model), and controller code easier to read.
 The page is rendered using EJS templating, styling with vanilla CSS for the landing page and TailwindCSS for the remainding pages. When the user loads the page their http request gets the login/sign up page as a response once the user is validated with passport their profile is rendered to the user. In the profile page user can see the stats chart for each player, in here the user can add new players by clicking into the players page and they can keep track the stats for each player during the game.
 Instead of updatings each stat with a put request I have nested each +/- button in a form and used the post request with method-override middleware in order to change the post request value as a put request.
-
-#Optimizations
-
-This app was a ton of fun to create and plan on adding more things to optimize speed and performance :smirk:. For performance, adding an update button will be my next step and to optimize rending speed I'll be making the stats update buttons React components instead of updating as forms so only the buttons themselves will update on each user request instead of the whole page loading.
 
 In order to create the Parallax effect on the landing page, a section with the class of "image" was added to all the sections that wrapped the content, this in turn was styled with the background-image & background-position property in CSS.
 
