@@ -1,6 +1,6 @@
 # Club basketball stats tracker
 
-This is a backend app for club basketball :basketball: teams to keep track of each of their players stats and store it in a database.
+An app for club basketball :basketball: teams to keep track of each of their players stats and store it in a database.
 
 https://clubbasketballstatstracker.cyclic.app/
 
