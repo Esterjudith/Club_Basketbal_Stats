@@ -33,11 +33,32 @@ npm run css
 # How it's made:
 
 ##Teck used:  Node.js, Express, EJS, Javascript, Passport, TailwindCSS, CSS, REST APIs
+Notable Dependencies:
 
-Used MVC structure to make the router, database (model), and controller code easier to read.
-The page is rendered using EJS templating, styling with vanilla CSS for the landing page and TailwindCSS for the remainding pages. When the user loads the page their http request gets the login/sign up page as a response once the user is validated with passport their profile is rendered to the user. In the profile page user can see the stats chart for each player, in here the user can add new players by clicking into the players page and they can keep track the stats for each player during the game.
-Instead of updatings each stat with a put request I have nested each +/- button in a form and used the post request with method-override middleware in order to change the post request value as a put request.
+connect-mongo (https://www.npmjs.com/package/connect-mongo)
+Used to save cookie in database that allowed for user's session to persist.
+dotenv (https://www.npmjs.com/package/dotenv)
+Intergration of .env file that allows protection and processing of environment variables.
+express-session (https://www.npmjs.com/package/express-session)
+Middleware that aids formating of user session cookie data. Used in cooperation with 'connect-mongo' to store the session in the database.
+path (https://nodejs.org/api/path.html)
+provides utilities for working with file and directory paths.
+mongoose (https://mongoosejs.com/)
+Schema-based solution to model application data. Used to validate/organize database user and story entries.
+morgan (https://www.npmjs.com/package/morgan)
+Node. js and Express middleware to log HTTP requests and errors. Used to simply process of testing/troubleshooting during development.
+passport (https://www.passportjs.org/)
+Authentication middleware for Node.js. Used to modularize the authentication process with OAuth and Google login.
+passport-google-oauth20 (https://www.passportjs.org/packages/passport-google-oauth2/)
+lets you authenticate using Google in your Node.js applications.
+Handlebars (https://handlebarsjs.com/)
+embeded javascript templating language for the frontend.
+bcrypt (https://www.npmjs.com/package/bcrypt)
+A library to help you hash passwords.
+Method-Override (http://expressjs.com/en/resources/middleware/method-override.html)
+Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn’t support it.
+Cloudinary (https://www.npmjs.com/package/cloudinary)
+Cloudinary is an end-to-end image- and video-management API
 
-In order to create the Parallax effect on the landing page, a section with the class of "image" was added to all the sections that wrapped the content, this in turn was styled with the background-image & background-position property in CSS.
-
-the ::before attribute was use to create the slanted look for each of the content sections. For the hero section the height of the pseudo element had to be narrow in order to avoid using the z-index. For the second wrapper section the z-index property was nessesary because the height of the ::before had to be long enough to cover the background on the right side of the section. Therefore the header had to be put in a higher z-index.
+##Lessons Learned:
+My biggest challenge was learning how to make the dashboard table responsive.  Once I realized that the mobile screen had to be layed out in a very different way than the desktop and worked on it small sections, I had it working perfectly. 
