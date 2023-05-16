@@ -32,33 +32,26 @@ npm run css
 
 # How it's made:
 
-##Teck used:  Node.js, Express, EJS, Javascript, Passport, TailwindCSS, CSS, REST APIs
+Teck used:  Node.js, Express, EJS, Javascript, Passport, TailwindCSS, CSS, REST APIs
 Notable Dependencies:
 
-connect-mongo (https://www.npmjs.com/package/connect-mongo)
-Used to save cookie in database that allowed for user's session to persist.
-dotenv (https://www.npmjs.com/package/dotenv)
-Intergration of .env file that allows protection and processing of environment variables.
-express-session (https://www.npmjs.com/package/express-session)
-Middleware that aids formating of user session cookie data. Used in cooperation with 'connect-mongo' to store the session in the database.
-path (https://nodejs.org/api/path.html)
-provides utilities for working with file and directory paths.
-mongoose (https://mongoosejs.com/)
-Schema-based solution to model application data. Used to validate/organize database user and story entries.
-morgan (https://www.npmjs.com/package/morgan)
-Node. js and Express middleware to log HTTP requests and errors. Used to simply process of testing/troubleshooting during development.
-passport (https://www.passportjs.org/)
-Authentication middleware for Node.js. Used to modularize the authentication process with OAuth and Google login.
-passport-google-oauth20 (https://www.passportjs.org/packages/passport-google-oauth2/)
-lets you authenticate using Google in your Node.js applications.
-Handlebars (https://handlebarsjs.com/)
-embeded javascript templating language for the frontend.
-bcrypt (https://www.npmjs.com/package/bcrypt)
-A library to help you hash passwords.
-Method-Override (http://expressjs.com/en/resources/middleware/method-override.html)
-Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn’t support it.
-Cloudinary (https://www.npmjs.com/package/cloudinary)
-Cloudinary is an end-to-end image- and video-management API
+*connect-mongo (https://www.npmjs.com/package/connect-mongo)
+   *Used to save cookie in database that allowed for user's session to persist.
+*dotenv (https://www.npmjs.com/package/dotenv)
+ *Intergration of .env file that allows protection and processing of environment variables.
+*express-session (https://www.npmjs.com/package/express-session)
+  *Middleware that aids formating of user session cookie data. Used in cooperation with 'connect-mongo' to store the session in the database.
+*path (https://nodejs.org/api/path.html)
+  *provides utilities for working with file and directory paths.
+*mongoose (https://mongoosejs.com/)
+  *Schema-based solution to model application data. Used to validate/organize database user and story entries.
+*passport (https://www.passportjs.org/)
+  *Authentication middleware for Node.js. Used to modularize the authentication process with OAuth and Google login.
+*bcrypt (https://www.npmjs.com/package/bcrypt)
+  *A library to help you hash passwords.
+*Method-Override (http://expressjs.com/en/resources/middleware/method-override.html)
+  *Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn’t support it.
+
 
 ##Lessons Learned:
 My biggest challenge was learning how to make the dashboard table responsive.  Once I realized that the mobile screen had to be layed out in a very different way than the desktop and worked on it small sections, I had it working perfectly. 
