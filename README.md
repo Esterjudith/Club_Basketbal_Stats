@@ -55,3 +55,16 @@ Notable Dependencies:
 
 ##Lessons Learned:
 My biggest challenge was learning how to make the dashboard table responsive.  Once I realized that the mobile screen had to be layed out in a very different way than the desktop and worked on it small sections, I had it working perfectly. 
+
+
+ Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
+
+-OR-
+
+ Markup : - Bullet list
+              - Nested bullet
+                  - Sub-nested bullet etc
+          - Bullet list item 2 
