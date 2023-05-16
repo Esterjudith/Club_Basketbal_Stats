@@ -54,7 +54,7 @@ Notable Dependencies:
 
 
 ## Lessons Learned:
-My biggest challenge was learning how to make the dashboard table responsive.  Once I realized that the mobile screen had to be layed out in a very different way than the desktop and worked on it small sections, I had it working perfectly. 
+My biggest challenge was learning how to make the dashboard table responsive.  Once I realized that the mobile screen had to be layed out in a very different way than the desktop and worked on it small sections, changed from row to columns, and removed some of the titles, I had it working perfectly. 
 
 
  
