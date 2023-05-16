@@ -53,7 +53,7 @@ Notable Dependencies:
   * Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn’t support it.
 
 
-##Lessons Learned:
+## Lessons Learned:
 My biggest challenge was learning how to make the dashboard table responsive.  Once I realized that the mobile screen had to be layed out in a very different way than the desktop and worked on it small sections, I had it working perfectly. 
 
 
